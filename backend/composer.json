@@ -1,9 +1,0 @@
-{
-	"name": "class-pictures",
-	"authors": [
-		{"name": "Arthur Fonseca Vilaça", "email": "vilaca.arthur.f@gmail.com"}
-	],
-	"require": {
-		"laravel/installer": "*"
-	}
-}
