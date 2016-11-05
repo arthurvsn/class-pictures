@@ -11,4 +11,4 @@
 |
 */
 
-require 'rest/userRoutes.php';
+require 'rest/partnerRoutes.php';
