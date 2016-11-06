@@ -18,7 +18,7 @@ class ClassPicturesController extends Controller
 		$data = sizeof($_POST) > 0 ? $_POST : json_decode($request->getContent(), true);
 
 		$res = DB::insert('insert into class_pictures (class_id, created_at, partner_id, path) values (?, ?, ?, ?)',
-			[$data['class_id'], new \DateTime(), $data['partner_id'] $data['path']]);
+			[$data['class_id'], new \DateTime(), $data['partner_id'], $data['path']]);
 
 		return ["status" => ($res)?'ok':'erro'];
 	}

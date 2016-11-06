@@ -12,3 +12,11 @@
 */
 
 require 'rest/partnerRoutes.php';
+
+require 'rest/ClassPicturesRoutes.php';
+
+require 'rest/classRoutes.php';
+
+require 'rest/LoginRoutes.php';
+
+require 'rest/PartnerClassRoutes.php';

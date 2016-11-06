@@ -18,7 +18,7 @@ class ClassController extends Controller
 		$data = sizeof($_POST) > 0 ? $_POST : json_decode($request->getContent(), true);
 
 		$res = DB::insert('insert into class (created_at, created_by, icon_path, name) values (?, ?, ?, ?)',
-			[$data['created_at'], $data['created_by'], $data['icon_path'] $data['name']]);
+			[$data['created_at'], $data['created_by'], $data['icon_path'], $data['name']]);
 
 		return ["status" => ($res)?'ok':'erro'];
 	}

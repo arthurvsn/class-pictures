@@ -10,7 +10,7 @@ class PartnerController extends Controller
 {
 
 	// list partner
-    public function listUsers() {
+    public function listUser() {
 		return DB::select('select * from partner');
 	}
  
@@ -19,7 +19,7 @@ class PartnerController extends Controller
 		$data = sizeof($_POST) > 0 ? $_POST : json_decode($request->getContent(), true);
 
 		$res = DB::insert('insert into partner (identification, name, partner_type, password, phone, status, email) values (?, ?, ?, ?, ?, ?, ?)',
-			[$data['identification'], $data['name'], $data['partner_type'] $data['password'], $data['phone'], $data['status'], $data['email']]);
+			[$data['identification'], $data['name'], $data['partner_type'], $data['password'], $data['phone'], $data['status'], $data['email']]);
 
 		return ["status" => ($res)?'ok':'erro'];
 	}
