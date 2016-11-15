@@ -7,9 +7,10 @@ html,body{
 .login-container{
     position: relative;
     width: 70%;
-    max-width: 500px;
+    max-width: 350px;
     min-width: 200px;
-    margin: 40% auto;
+    height: 20%;
+    margin: 70px auto;
     padding: 20px;
     text-align: center;
     background: #fff;
