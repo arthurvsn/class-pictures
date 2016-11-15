@@ -1,3 +1,8 @@
+@font-face{
+  font-family:"TBC";
+  src:url('../../../assets/fonts/TCB_____.TTF');
+}
+
 body{background: #eee url(../../../assets/img/background.jpg);}
 html,body{
     position: relative;
@@ -6,7 +11,7 @@ html,body{
 
 .login-container{
     position: relative;
-    width: 70%;
+    width: 85%;
     max-width: 350px;
     min-width: 200px;
     height: 20%;
@@ -85,11 +90,15 @@ html,body{
 }
 
 .form-box input[type="text"]{
+	font-family:"TBC";
+	font-size: 1.6em;
     border-radius: 5px 5px 0 0;
     text-transform: lowercase;
 }
 
 .form-box input[type="password"]{
+	font-family:"TBC";
+	font-size: 1.6em;
     border-radius: 0 0 5px 5px;
     border-top: 0;
 }
@@ -97,6 +106,8 @@ html,body{
 .form-box button.login{
     margin-top:15px;
     padding: 10px 20px;
+    font-family:"TBC";
+	font-size: 1.2em;
 }
 
 .animated {
