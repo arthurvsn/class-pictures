@@ -11,6 +11,15 @@
 
 		window.location = '#/login';
 
+		$scope.hideMenu = function() {
+			var path, ref, specificPages;
+			path = $location.path();
+			specificPages = ['/404', '/login'];
+			return (ref = specificPages.indexOf(path) >= 0) != null ? ref : {
+				1: -1
+			};
+		};
+
 		return $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
 			return $document.scrollTo(0, 0);
 		});

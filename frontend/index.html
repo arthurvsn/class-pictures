@@ -28,7 +28,14 @@
   <body ng-app="App" class="cp-font">
 
     <div ng-controller="AppCtrl">
-      <div ng-view></div>
+
+
+        <div ng-hide="hideMenu()">
+            <section data-ng-include=" 'app/header.html' "></section>
+            <aside data-ng-include=" 'app/nav.html' "></aside>
+        </div>
+
+        <div ng-view></div>
     </div>
 
 
