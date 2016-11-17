@@ -1,0 +1,26 @@
+<div ng-controller="navbar"> 
+	<nav class="navbar navbar-default" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+				<span class="sr-only">MENU</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+		<a class="navbar-brand" href="#/default">HOME</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+			<ul class="nav navbar-nav" ng-controller="navCtrl">
+				<li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
+					<a class="text-center cp-color cp-font" ng-click="nav.navClick($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="cp-color"><a href="#">Logado como {{usuario}}</a></li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav> 
+</div>
