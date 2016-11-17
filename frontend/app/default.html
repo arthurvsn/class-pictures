@@ -1,69 +1,76 @@
-<header>
-      <nav class="navbar navbar-inverse">
-         <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <li class="navbar-brand cabecalho"><a href="index.html"><img src="Logos/logo.png" alt="Class Picture"></a></li>
-            <!--<li class="navbar-brand">Class Picture</li>-->
-          </div>
+<div class="mainContainer">
+  <div class="text-center">
+    <h3 class="cp-font cp-color" id="main-title">CLASSPIC</h3>
+  </div>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="create.html">Create Discipline <span class="sr-only">(current)</span></a></li>
-              <li class="active"><a href="list.html">List Discipline <span class="sr-only">(current)</span></a></li>
-              <li class="active"><a href="about.html">About<span class="sr-only">(current)</span></li>
-            </ul>      
-            <ul class="nav navbar-nav navbar-right">
-              <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-  </header>
-  <center>
-    <section class="jumbotron gradient">      
-        <h1>Welcome!</h1></br>    
-        <p><a class="btn btn-primary btn-lg " href="#" role="button">Learn more</a></p></br> 
-    </section>
-  </center> 
-  <footer>
-    <div class="container">
-        <div class="row">
-            <!--<h3 class="footertext">About Us:</h3>-->
-            <br>
-              <div class="col-md-4">
-                <center>
-                  <img src="http://oi60.tinypic.com/w8lycl.jpg" class="img-circle" alt="the-brains">
-                  <br>
-                  <h4 class="footertext">App</h4>
-                  <p class="footertext">Com ele você poderá organizar melhor.<br>
-                </center>
-              </div>
-              <div class="col-md-4">
-                <center>
-                  <img src="http://oi60.tinypic.com/2z7enpc.jpg" class="img-circle" alt="...">
-                  <br>
-                  <h4 class="footertext">Mobile</h4>
-                  <p class="footertext">Desenvolvido para Web, entretanto com foco em Mobile First.<br>
-                </center>
-              </div>
-              <div class="col-md-4">
-                <center>
-                  <img src="http://oi61.tinypic.com/307n6ux.jpg" class="img-circle" alt="...">
-                  <br>
-                  <h4 class="footertext">Designer</h4>
-                  <p class="footertext">Possui Designer responsivo e amigável.<br>
-                </center>
-              </div>
-            </div>
-            <!--<p><center><a href="#">Contact Stuff Here</a> <p class="footertext">Copyright 2016</p></center></p>-->
+  <div ng-controller="navbar"> 
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">MENU</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/default">HOME</a>
+      </div>
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+        <ul class="nav navbar-nav" ng-controller="navCtrl">
+          <li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
+            <a class="text-center cp-color cp-font" ng-click="nav.navClick($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="cp-color"><a href="#">Logado como {{usuario}}</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav> 
+  </div>
+
+    <div class="row" ng-controller="homeCtrl">
+      <!--     buddy list      -->
+      <div class="col-xs-12 col-sm-3">
+        <ul class="list-group panel panel-default">
+          <li class="list-group-item">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 1</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 2</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 3</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 4</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--   ng-view below       -->
+      <div class="col-xs-12 col-sm-9 col-md-9 ">
+        <div class="panel panel-default">
+          <!-- <div ng-view></div> -->
+          <div class="panel-body"><h3>Área do "ng-view"</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
+      </div>
+
     </div>
-    </footer>
+  </div>
+</div>
