@@ -1,69 +1,36 @@
-<header>
-      <nav class="navbar navbar-inverse">
-         <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <li class="navbar-brand cabecalho"><a href="index.html"><img src="Logos/logo.png" alt="Class Picture"></a></li>
-            <!--<li class="navbar-brand">Class Picture</li>-->
-          </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="create.html">Create Discipline <span class="sr-only">(current)</span></a></li>
-              <li class="active"><a href="list.html">List Discipline <span class="sr-only">(current)</span></a></li>
-              <li class="active"><a href="about.html">About<span class="sr-only">(current)</span></li>
-            </ul>      
-            <ul class="nav navbar-nav navbar-right">
-              <li><button type="button" class="btn btn-default navbar-btn">Sign in</button></li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-      </nav>
-  </header>
-  <center>
-    <section class="jumbotron gradient">      
-        <h1>Welcome!</h1></br>    
-        <p><a class="btn btn-primary btn-lg " href="#" role="button">Learn more</a></p></br> 
-    </section>
-  </center> 
-  <footer>
-    <div class="container">
-        <div class="row">
-            <!--<h3 class="footertext">About Us:</h3>-->
-            <br>
-              <div class="col-md-4">
-                <center>
-                  <img src="http://oi60.tinypic.com/w8lycl.jpg" class="img-circle" alt="the-brains">
-                  <br>
-                  <h4 class="footertext">App</h4>
-                  <p class="footertext">Com ele você poderá organizar melhor.<br>
-                </center>
-              </div>
-              <div class="col-md-4">
-                <center>
-                  <img src="http://oi60.tinypic.com/2z7enpc.jpg" class="img-circle" alt="...">
-                  <br>
-                  <h4 class="footertext">Mobile</h4>
-                  <p class="footertext">Desenvolvido para Web, entretanto com foco em Mobile First.<br>
-                </center>
-              </div>
-              <div class="col-md-4">
-                <center>
-                  <img src="http://oi61.tinypic.com/307n6ux.jpg" class="img-circle" alt="...">
-                  <br>
-                  <h4 class="footertext">Designer</h4>
-                  <p class="footertext">Possui Designer responsivo e amigável.<br>
-                </center>
-              </div>
-            </div>
-            <!--<p><center><a href="#">Contact Stuff Here</a> <p class="footertext">Copyright 2016</p></center></p>-->
+<div class="mainContainer">
+  <h3 class="text-center cp-font cp-color" id="main-title">CLASSPIC</h3>
+  <!-- nav section -->
+  <div class="container well">
+    <nav class="" ng-controller="navCtrl">
+      <div class="container-fluid">
+        <div class="nav-header">
+          <ul class="nav nav-tabs center-block" ng-controller="navCtrl">
+            <li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
+              <a class="text-center cp-color cp-font" ng-click="nav.navClick($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <div class="row" ng-controller="homeCtrl">
+      <!--     buddy list      -->
+      <div class="col-xs-12 col-sm-3 panel-body">
+        <ul class="list-group">
+          <li class="list-group-item">
+            <input class="form-control cp-color cp-font" placeholder="SEARCH" type="text" ng-model="searchText">
+          </li>
+        </ul>
+      </div>
+
+      <!--   ng-view below       -->
+      <div class="col-xs-12 col-sm-9 col-md-9">
+        <div class="list-group panel-body">
+          <div ng-view></div>
+        </div>
+      </div>
+
     </div>
-    </footer>
+  </div>
+</div>
+    

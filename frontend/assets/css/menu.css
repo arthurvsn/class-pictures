@@ -29,56 +29,56 @@ footer {
 /* Custom footer CSS
 -------------------------------------------------- */
 
-.container {
-  width: auto;
-  max-width: 680px;
-  padding: 0 15px;
-  height: auto;
-}
-.container .text-muted {
-  margin: 20px 0;
-}
-.footertext {
-  color: #ffffff;
-}
-.gradient {
-  background-color: #ffffff;
-  background: rgba(76,76,76,1);
-  background: -moz-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(44,44,44,1) 17%, rgba(60,60,60,1) 30%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(102,102,102,1) 59%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 81%, rgba(19,19,19,1) 93%, rgba(19,19,19,1) 100%);
-  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(76,76,76,1)), color-stop(12%, rgba(89,89,89,1)), color-stop(17%, rgba(44,44,44,1)), color-stop(30%, rgba(60,60,60,1)), color-stop(39%, rgba(71,71,71,1)), color-stop(51%, rgba(0,0,0,1)), color-stop(59%, rgba(102,102,102,1)), color-stop(60%, rgba(17,17,17,1)), color-stop(76%, rgba(43,43,43,1)), color-stop(81%, rgba(28,28,28,1)), color-stop(93%, rgba(19,19,19,1)), color-stop(100%, rgba(19,19,19,1)));
-  background: -webkit-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(44,44,44,1) 17%, rgba(60,60,60,1) 30%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(102,102,102,1) 59%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 81%, rgba(19,19,19,1) 93%, rgba(19,19,19,1) 100%);
-  background: -o-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(44,44,44,1) 17%, rgba(60,60,60,1) 30%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(102,102,102,1) 59%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 81%, rgba(19,19,19,1) 93%, rgba(19,19,19,1) 100%);
-  background: -ms-linear-gradient(left, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(44,44,44,1) 17%, rgba(60,60,60,1) 30%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(102,102,102,1) 59%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 81%, rgba(19,19,19,1) 93%, rgba(19,19,19,1) 100%);
-  background: linear-gradient(to right, rgba(76,76,76,1) 0%, rgba(89,89,89,1) 12%, rgba(44,44,44,1) 17%, rgba(60,60,60,1) 30%, rgba(71,71,71,1) 39%, rgba(0,0,0,1) 51%, rgba(102,102,102,1) 59%, rgba(17,17,17,1) 60%, rgba(43,43,43,1) 76%, rgba(28,28,28,1) 81%, rgba(19,19,19,1) 93%, rgba(19,19,19,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=1 );
-
+  a.list-group-item:hover{
+  color:white;
+  background-color:#337ab7;
 }
 
-.wrapper {
-  height: 100%;
-  min-height: 240px;
-  margin: 50px;
-  margin-left:100px; 
-  /*margin-right: 100px;
-  border-style: dotted;*/
-  border-bottom-color: #ff0000;
-  /* habilita o flex nos filhos diretos */
-  display: -ms-flex;
-  display: -webkit-flex;
-  display: flex;
-
-  /* centraliza na vertical */
-  -ms-align-items: center;
-  -webkit-align-items: center;
-  align-items: center;
-  text-align: center;
-  /* centraliza na horizontal */
-  -ms-justify-content: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+a.list-group-item{
+  text-align:center;
 }
 
-.wrapper section {
-  padding: 40px;
-  border: 1px solid rgba(0, 0, 0, .3);
+section#sorting {
+    margin-bottom: 10px;
+}
+a.sortOption{
+  margin:5px;
+  font-size:11px;
+  text-decoration:none;
+  cursor:pointer;
+  font-weight:200;
+  
+}
+
+section.info {
+    float: left;
+    width: 70%;
+    margin: 5px;
+}
+
+section.profileImage {
+    width: 25%;
+    float: right;
+}
+
+p#bio{
+    display: inline-block;
+    width: 100%;
+    margin-left: 10px;
+}
+
+input.ng-invalid-required.ng-touched.ng-dirty{
+  border:1px solid red;
+}
+
+.cp-font {
+  font-family: 'TBC';
+}
+
+.cp-color {
+  color: #34495E;
+}
+
+#main-title {
+  font-size: 2.4em; 
 }
