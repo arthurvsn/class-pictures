@@ -11,12 +11,17 @@
 	// controllers of main page
 	angular.module('app.login').controller('navCtrl', function($scope) {
 	  $scope.nav = {
-	    navItems: ['HOME', 'CREATE DISCIPLINE', 'LIST DISCIPLINE', 'ABOUT CP'],
+	    navItems: ['CREATE DISCIPLINE', 'LIST DISCIPLINE', 'ABOUT CP'],
 	    selectedIndex: 0,
 	    navClick: function($index) {
 	      $scope.nav.selectedIndex = $index;
 	    }
 	  };
-	})
+	});
+
+	// 
+	angular.module('app.login').controller('navbar', function($scope) {
+	  $scope.usuario = 'Fulano da Silva';
+	});
 
 })();

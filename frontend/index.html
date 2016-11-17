@@ -4,10 +4,14 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Class Pictures">
+    <meta name="description" content="CLASSPIC">
     <meta name="keywords" content="Fotos,Photo,Picture,Mobile">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Class Pictures</title>
+
+    <link rel="icon" href="assets/img/logo/favicon.png" sizes="16x16 32x32 48x48 64x64 128x128" type="image/png">
+    <link rel="apple-touch-icon" sizes="144x144 114x114 72x72" href="assets/img/logo/favicon.png">
+    <link rel="apple-touch-icon" href="assets/img/logo/favicon.png">
+
+    <title>CLASSPIC</title>
 
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -16,8 +20,12 @@
     <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 
+    <!-- <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" /> -->
+    <!-- <script>document.write('<base href="' + document.location + '" />');</script> -->
+    <!-- <script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script> -->
+
   </head>
-  <body ng-app="App">
+  <body ng-app="App" class="cp-font">
 
     <div ng-controller="AppCtrl">
       <div ng-view></div>
@@ -31,5 +39,7 @@
     <script src="bower_components/angular-route.js"></script>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/login-screen.js"></script>
+
+    <script data-require="ui-bootstrap@0.5.0" data-semver="0.5.0" src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
   </body>
 </html>

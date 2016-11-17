@@ -1,36 +1,76 @@
 <div class="mainContainer">
-  <h3 class="text-center cp-font cp-color" id="main-title">CLASSPIC</h3>
-  <!-- nav section -->
-  <div class="container well">
-    <nav class="" ng-controller="navCtrl">
-      <div class="container-fluid">
-        <div class="nav-header">
-          <ul class="nav nav-tabs center-block" ng-controller="navCtrl">
-            <li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
-              <a class="text-center cp-color cp-font" ng-click="nav.navClick($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
-            </li>
-          </ul>
-        </div>
+  <div class="text-center">
+    <h3 class="cp-font cp-color" id="main-title">CLASSPIC</h3>
+  </div>
+
+  <div ng-controller="navbar"> 
+    <nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">MENU</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#/default">HOME</a>
       </div>
-    </nav>
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+        <ul class="nav navbar-nav" ng-controller="navCtrl">
+          <li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
+            <a class="text-center cp-color cp-font" ng-click="nav.navClick($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="cp-color"><a href="#">Logado como {{usuario}}</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav> 
+  </div>
+
     <div class="row" ng-controller="homeCtrl">
       <!--     buddy list      -->
-      <div class="col-xs-12 col-sm-3 panel-body">
-        <ul class="list-group">
+      <div class="col-xs-12 col-sm-3">
+        <ul class="list-group panel panel-default">
           <li class="list-group-item">
-            <input class="form-control cp-color cp-font" placeholder="SEARCH" type="text" ng-model="searchText">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 1</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 2</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 3</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="#" class="list-group-item ng-scope">
+              <h4 class="ng-binding">Disciplina 4</h4>
+              <p class="ng-binding">Detalhe 1 | Detalhe 2</p>
+            </a>
           </li>
         </ul>
       </div>
 
       <!--   ng-view below       -->
-      <div class="col-xs-12 col-sm-9 col-md-9">
-        <div class="list-group panel-body">
-          <div ng-view></div>
+      <div class="col-xs-12 col-sm-9 col-md-9 ">
+        <div class="panel panel-default">
+          <!-- <div ng-view></div> -->
+          <div class="panel-body"><h3>Área do "ng-view"</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
         </div>
       </div>
 
     </div>
   </div>
 </div>
-    
