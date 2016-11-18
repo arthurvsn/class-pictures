@@ -20,10 +20,6 @@
     <link href="assets/css/bootstrap-theme.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 
-    <!-- <link data-require="bootstrap-css@*" data-semver="3.0.0" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" /> -->
-    <!-- <script>document.write('<base href="' + document.location + '" />');</script> -->
-    <!-- <script data-require="angular.js@1.1.x" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.js" data-semver="1.1.5"></script> -->
-
   </head>
   <body ng-app="App" class="cp-font">
 
@@ -32,9 +28,8 @@
 
         <div ng-hide="hideMenu()">
             <section data-ng-include=" 'app/header.html' "></section>
-            <aside data-ng-include=" 'app/nav.html' "></aside>
+            <aside data-ng-include=" 'app/nav.html' "  class="col-xs-12 col-sm-4 col-md-4"></aside>
         </div>
-
         <div ng-view></div>
     </div>
 
