@@ -31,8 +31,11 @@
 
 		routes = [
 			'404',
-			'default',
-			'login'
+			'main',
+			'login',
+			'create',
+			'list',
+			'about'
 		];
 
 		setRoutes = function(route) {

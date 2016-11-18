@@ -15,11 +15,13 @@
 		<div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 			<ul class="nav navbar-nav" ng-controller="navCtrl">
 				<li ng-repeat="navLink in nav.navItems" ng-class="{active : $index === nav.selectedIndex}">
-					<a class="text-center cp-color cp-font" ng-click="nav.navClick($index)" ng-href="#/{{navLink}}">{{navLink}}</a>
+					<a class="text-center cp-color cp-font" ng-click="nav.navClick($index)" ng-href="#/{{navLink.link}}">{{navLink.name}}</a>
 				</li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li class="cp-color"><a href="#">Logado como {{usuario}}</a></li>
+				<li class="dropdown-toggle cp-color" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a href="#login">Olá, {{usuario}} <span class="caret"></span>
+				</li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</nav> 
