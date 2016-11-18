@@ -35,7 +35,9 @@
 			'login',
 			'create',
 			'list',
-			'about'
+			'about',
+			'edit',
+			'discipline'
 		];
 
 		setRoutes = function(route) {
