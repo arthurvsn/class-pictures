@@ -4,8 +4,8 @@
     <div class="avatar"><img src="assets/img/logo/main_logo.png" /></div>
       <div class="form-box">
         <form action="" method="">
-          <input name="user" type="text" placeholder="username" />
-          <input type="password" placeholder="password" />
+          <input name="user" type="text" placeholder="username" ng-model="loginData.user" />
+          <input type="password" placeholder="password"  ng-model="loginData.senha"/>
           <button class="btn btn-info btn-block login" ng-click="doLogin()">LOGIN</button>
         </form>
       </div>
