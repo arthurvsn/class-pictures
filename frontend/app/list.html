@@ -1,86 +1,56 @@
-<div class="col-xs-12 col-sm-8 col-md-8 panel panel-default">
-      <div class="panel-body">
-        <ul class="list-group panel panel-default">
-        	<h3 class="text-center">List of Disciplines</h3>
-			
-			<li class="list-group-item">
+<div class="col-xs-12 col-sm-8 col-md-8 panel panel-default" ng-controller="ListCtrl">
+
+	<div class="panel-body" ng-show="divIndex == 0">
+		<ul class="list-group panel panel-default">
+			<h3 class="text-center">List of Disciplines</h3>
+			<li class="list-group-item" ng-repeat="discipline in disciplinesList">
 				<div class="list-group-item ng-scope">
 					<a href="#/discipline">
-						<h3 class="ng-binding">Discipline 1</h3>
+						<h3 class="ng-binding">{{discipline.name}}</h3>
 					</a>
-					<h4>Class of this discipline</h4>
+					<h4>{{discipline.comments}}</h4>
 					<p class="ng-binding text-right">
-						<a class="btn" href="#/edit">
+						<a class="btn" ng-click="editClass()">
 							<span style="color:blue;" class="glyphicon glyphicon-pencil"></span>
 							<span>  EDIT</span>
 						</a>
 						 | 
-						<a class="btn" href="#/main">
+						<a class="btn" ng-click="deleteClass()">
 							<span style="color:red;" class="glyphicon glyphicon-remove"></span>
 							<span>  DELETE</span>
 						</a>
 					</p>
 				</div>
 			</li>
-			
-			<li class="list-group-item">
-				<div class="list-group-item ng-scope">
-					<a href="#/discipline">
-						<h3 class="ng-binding">Discipline 2</h3>
-					</a>
-					<h4>Class of this discipline</h4>
-					<p class="ng-binding text-right">
-						<a class="btn" href="#/edit">
-							<span style="color:blue;" class="glyphicon glyphicon-pencil"></span>
-							<span>  EDIT</span>
-						</a>
-						 | 
-						<a class="btn" href="#/main">
-							<span style="color:red;" class="glyphicon glyphicon-remove"></span>
-							<span>  DELETE</span>
-						</a>
-					</p>
-				</div>
-			</li>
-			
-			<li class="list-group-item">
-				<div class="list-group-item ng-scope">
-					<a href="#/discipline">
-						<h3 class="ng-binding">Discipline 3</h3>
-					</a>
-					<h4>Class of this discipline</h4>
-					<p class="ng-binding text-right">
-						<a class="btn" href="#/edit">
-							<span style="color:blue;" class="glyphicon glyphicon-pencil"></span>
-							<span>  EDIT</span>
-						</a>
-						 | 
-						<a class="btn" href="#/main">
-							<span style="color:red;" class="glyphicon glyphicon-remove"></span>
-							<span>  DELETE</span>
-						</a>
-					</p>
-				</div>
-			</li>
-			
-			<li class="list-group-item">
-				<div class="list-group-item ng-scope">
-					<a href="#/discipline">
-						<h3 class="ng-binding">Discipline 4</h3>
-					</a>
-					<h4>Class of this discipline</h4>
-					<p class="ng-binding text-right">
-						<a class="btn" href="#/edit">
-							<span style="color:blue;" class="glyphicon glyphicon-pencil"></span>
-							<span>  EDIT</span>
-						</a>
-						 | 
-						<a class="btn" href="#/main">
-							<span style="color:red;" class="glyphicon glyphicon-remove"></span>
-							<span>  DELETE</span>
-						</a>
-					</p>
-				</div>
-			</li>
+
 		</ul>
+	</div>
+
+	<div class="panel-body" ng-show="divIndex == 1">
+		<div class="list-group-item">
+			<h3 class="text-center">Edit Discipline</h3>
+			<form name="CreateForm">
+				<div class="form-group">
+		
+					<p><label for="discipline">Discipline Name: <b style="color: red;">*</b> </label> <input id="discipline" class="form-control" type="text" ng-model="selected.name" placeholder="Enter a discipline name" required> </p>
+					<p><label for="class">Class: </label> <input id="class" class="form-control" type="text" ng-model="selected.clas" placeholder="Enter your your class"> </p>
+					<p><label for="obs">Obs:</label></p>
+					<textarea class="form-control" id="obs" rows="3" ng-model="selected.comments"></textarea>
+				</div>
+
+				<a ng-click="saveSelected()">
+					<button class="btn btn-default" ng-disabled="CreateForm.$invalid">
+					<span class="glyphicon glyphicon-ok"></span>
+					<span> Save</span>
+					</button>
+				</a>
+
+				<a ng-click="cancelEdit()">
+					<button class="btn btn-default">
+					<span class="glyphicon glyphicon-remove"></span><span>  Cancel</span>
+					</button>
+				</a>
+			</form>
+		</div>
+	</div>
 </div>

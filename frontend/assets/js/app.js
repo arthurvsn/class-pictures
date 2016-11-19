@@ -2,10 +2,14 @@
 	'use strict';
     var app = angular.module('App', [
 		'ngRoute',
-		'app.login'
+		'app.login',
+		'app.createClass',
+		'app.list'
     ]);
 
     angular.module('app.login', []);
+    angular.module('app.createClass', []);
+    angular.module('app.list', []);
 
     app.controller('AppCtrl', ['$scope', '$location', '$rootScope', '$document', function($scope, $location, $rootScope, $document) {
 
@@ -30,14 +34,7 @@
 		var routes, setRoutes;
 
 		routes = [
-			'404',
-			'main',
-			'login',
-			'create',
-			'list',
-			'about',
-			'edit',
-			'discipline'
+			'404', 'main', 'login', 'create', 'list', 'about', 'edit', 'discipline'
 		];
 
 		setRoutes = function(route) {

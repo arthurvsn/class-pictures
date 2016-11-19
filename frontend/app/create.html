@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-8 col-md-8 panel panel-default">
+<div class="col-xs-12 col-sm-8 col-md-8 panel panel-default" ng-controller="CreateClassCtrl">
     <div class="panel-body">
     	
     	<div ng-controller="CreateCtrl">
@@ -14,15 +14,15 @@
 
 	        </div>
 
-	        <a href="#/list">
-	          <button class="btn btn-default" ng-disabled="CreateForm.$invalid">
+	        <a>
+	          <button class="btn btn-default" ng-disabled="CreateForm.$invalid" ng-click="save()">
 	             <span class="glyphicon glyphicon-ok"></span>
 	             <span> Create</span>
 	            </button>
 	        </a>
 
-	        <a href="#/list">
-	          <button class="btn btn-default">
+	        <a>
+	          <button class="btn btn-default" ng-click="cancel()">
 	              <span class="glyphicon glyphicon-remove"></span><span>  Cancel</span>
 	            </button>
 	        </a>
