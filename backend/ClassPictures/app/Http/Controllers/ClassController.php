@@ -18,7 +18,7 @@ class ClassController extends Controller
 		$data = sizeof($_POST) > 0 ? $_POST : json_decode($request->getContent(), true);
 
 		$res = DB::insert('insert into class (created_at, created_by, icon_path, name) values (?, ?, ?, ?)',
-			[$data['created_at'], $data['created_by'], $data['icon_path'], $data['name']]);
+			[new \DateTime(), '1', '1', $data['name']]);
 
 		return ["status" => ($res)?'ok':'erro'];
 	}
@@ -27,8 +27,8 @@ class ClassController extends Controller
 	public function editClass($id, Request $request) {
 		$data = sizeof($_POST) > 0 ? $_POST : json_decode($request->getContent(), true);
 
-		$res = DB::update("update class set created_at = ?, created_by = ?, icon_path = ?, name = ?, WHERE id = ?",
-			[$data['created_at'], $data['created_by'], $data['icon_path'], $data['name'], $id]);
+		$res = DB::update("update class set name = ? WHERE id = ?",
+			[$data['name'], $id]);
 
 		return ["status" => ($res)?'ok':'erro'];
 	}

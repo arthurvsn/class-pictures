@@ -1,16 +1,16 @@
 <div class="col-xs-12 col-sm-8 col-md-8 panel panel-default" ng-controller="CreateClassCtrl">
     <div class="panel-body">
     	
-    	<div ng-controller="CreateCtrl">
+
 	      <div class="list-group-item">
 	        <h3 class="text-center">Create Discipline</h3>
 	        <form name="CreateForm">
 	        <div class="form-group">
 	    
-	          <p><label for="discipline">Discipline Name: <b style="color: red;">*</b> </label> <input id="discipline" class="form-control" type="text" ng-model="currentDiscipline.discipline" placeholder="Enter a discipline name" required> </p>
-	          <p><label for="class">Class: </label> <input id="class" class="form-control" type="text" ng-model="currentDiscipline.clss" placeholder="Enter your your class"> </p>
-	          <p><label for="obs">Obs:</label></p>
-	          <textarea class="form-control" id="obs" rows="3" ng-model="currentDiscipline.obs"></textarea>
+	          <!--<p><label for="discipline">Discipline Name: <b style="color: red;">*</b> </label> <input id="discipline" class="form-control" type="text" ng-model="currentDiscipline.discipline" placeholder="Enter a discipline name" required> </p>-->
+	          <p><label for="class">Class: </label> <input id="class" class="form-control" type="text" ng-model="currentDiscipline.name" placeholder="Enter your your class"> </p>
+	          <!--<p><label for="obs">Obs:</label></p>
+	          <textarea class="form-control" id="obs" rows="3" ng-model="currentDiscipline.obs"></textarea>-->
 
 	        </div>
 
@@ -28,6 +28,6 @@
 	        </a>
 	        </form>
 	      </div>
-	    </div>
+
     </div>
 </div>
