@@ -3,19 +3,19 @@
 	<div class="panel-body" ng-show="divIndex == 0">
 		<ul class="list-group panel panel-default">
 			<h3 class="text-center">List of Disciplines</h3>
-			<li class="list-group-item" ng-repeat="discipline in disciplinesList">
+			<li class="list-group-item" ng-repeat="discipline in disciplinesList track by $index">
 				<div class="list-group-item ng-scope">
-					<a href="#/discipline">
+					<a href="#/discipline" ng-click="editClass(discipline)">
 						<h3 class="ng-binding">{{discipline.name}}</h3>
 					</a>
 					<!--<h4>{{discipline.comments}}</h4>-->
 					<p class="ng-binding text-right">
-						<a class="btn" ng-click="editClass()">
+						<a class="btn" ng-click="editClass(discipline)">
 							<span style="color:blue;" class="glyphicon glyphicon-pencil"></span>
 							<span>  EDIT</span>
 						</a>
 						 | 
-						<a class="btn" ng-click="deleteClass()">
+						<a class="btn" ng-click="deleteClass(discipline)">
 							<span style="color:red;" class="glyphicon glyphicon-remove"></span>
 							<span>  DELETE</span>
 						</a>
@@ -26,7 +26,7 @@
 		</ul>
 	</div>
 
-	<div class="panel-body" ng-show="divIndex == 1">
+	<div class="panel-body" ng-show="divIndex == 1" ng-controller="EditCtrl">
 		<div class="list-group-item">
 			<h3 class="text-center">Edit Discipline</h3>
 			<form name="CreateForm">

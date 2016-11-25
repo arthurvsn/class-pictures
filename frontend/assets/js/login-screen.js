@@ -3,7 +3,11 @@
 	angular.module('app.login').controller('LoginCtrl', ['$scope', '$rootScope', function($scope, $rootScope) {
 
 		$scope.doLogin = function () {
-			window.location = '#/main';
+			if ($scope.name === "teste" && $scope.password === "123") {
+				window.location = '#/main';
+			} else {
+				alert("Usuário e/ou senha inválidos! Verifique os dados inseridos.")
+			}
 		}
 	}]);
 

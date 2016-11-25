@@ -3,28 +3,12 @@
     	
     	<div ng-controller="DisciplineController">
 	      <div class="list-group-item">
-	        <h3 class="text-center">Discipline Name</h3>
+	        <h3 class="text-center" ng-bind="selected.name" ></h3>
+
+					<ng-image-gallery images="selected.images">
+					</ng-image-gallery>
 	        
-	        <div class="form-group">
-	    
-	          <p><label for="class"><h4>Class:</h4></label> <div>Aqui vem a classe / turma!</div> </p>
-	          <p><label for="obs"><h4>Obs:</h4></label> <div>Aqui vem as obsrevações da disciplina!</div></p>
 
-
-	        </div>
-
-	        <a href="#/edit">
-	          <button class="btn btn-default">
-	             <span class="glyphicon glyphicon-ok"></span>
-	             <span> EDIT</span>
-	            </button>
-	        </a>
-
-	        <a href="#/main">
-	          <button class="btn btn-default">
-	              <span class="glyphicon glyphicon-remove"></span><span>  DELETE</span>
-	            </button>
-	        </a>
 					<button ng-click="toggleModal()" class="btn btn-default" data-toggle="modal" data-target="#new-picture-modal">
 						<span class="glyphicon glyphicon-picture"></span><span>  ADD IMAGE</span>
 					</button>
@@ -41,17 +25,13 @@
 								<div class="modal-body">
 									<div class="form-group">
 										<div class="input-group input-file" name="Fichier1">
-												<input type="text" class="form-control" placeholder='Choose a file...' />			
-														<span class="input-group-btn">
-														<button class="btn btn-default btn-choose" type="button">Choose</button>
-												</span>
-
-
+												<input type="file" id="new-image" class="form-control"/>
 										</div>
 									</div>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="toggleModal()">Close</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="toggleModal()">Cancel</button>
+									<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="saveImage()">Save</button>
 								</div>
 							</div>
 

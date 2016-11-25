@@ -4,15 +4,23 @@
 
 
 		$scope.save = function() {
+            $scope.$root.divIndex = 0;
 			//POST
 			// use $.param jQuery function to serialize data from JSON 
             var data = {
-            	name: $scope.name
+            	name: $scope.name,
+                pictures: [],
+                id: new Date().getTime()
                 //discipline: $scope.discipline,
                 //class: $scope.class,
                 //observation: $scope.obs
             };
-        	console.log("save");
+            var classes = localStorage.getItem('class')
+            classes = classes? JSON.parse(classes) : [];
+            classes.push(data)
+            localStorage.setItem('class', JSON.stringify(classes))
+            $scope.$root.divIndex = 0;
+            window.location = "#/list";
 
             $http.post('../backend/ClassPictures/public/index.php/class', $scope.currentDiscipline)
             .success(function (data, status, headers, config) {

@@ -4,7 +4,8 @@
 		'ngRoute',
 		'app.login',
 		'app.createClass',
-		'app.list'
+		'app.list',
+		'thatisuday.ng-image-gallery'
     ]);
 
     angular.module('app.login', []);
