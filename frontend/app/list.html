@@ -8,7 +8,7 @@
 					<a href="#/discipline">
 						<h3 class="ng-binding">{{discipline.name}}</h3>
 					</a>
-					<h4>{{discipline.comments}}</h4>
+					<!--<h4>{{discipline.comments}}</h4>-->
 					<p class="ng-binding text-right">
 						<a class="btn" ng-click="editClass()">
 							<span style="color:blue;" class="glyphicon glyphicon-pencil"></span>
@@ -32,10 +32,10 @@
 			<form name="CreateForm">
 				<div class="form-group">
 		
-					<p><label for="discipline">Discipline Name: <b style="color: red;">*</b> </label> <input id="discipline" class="form-control" type="text" ng-model="selected.name" placeholder="Enter a discipline name" required> </p>
-					<p><label for="class">Class: </label> <input id="class" class="form-control" type="text" ng-model="selected.clas" placeholder="Enter your your class"> </p>
-					<p><label for="obs">Obs:</label></p>
-					<textarea class="form-control" id="obs" rows="3" ng-model="selected.comments"></textarea>
+					<!--<p><label for="discipline">Discipline Name: <b style="color: red;">*</b> </label> <input id="discipline" class="form-control" type="text" ng-model="selected.name" placeholder="Enter a discipline name" required> </p>-->
+					<p><label for="class">Class: </label> <input id="class" class="form-control" type="text" ng-model="selected.name" placeholder="Enter your your class"> </p>
+					<!--<p><label for="obs">Obs:</label></p>
+					<textarea class="form-control" id="obs" rows="3" ng-model="selected.comments"></textarea>-->
 				</div>
 
 				<a ng-click="saveSelected()">
