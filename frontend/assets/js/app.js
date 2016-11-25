@@ -1,6 +1,6 @@
 (function () {
 	'use strict';
-    var app = angular.module('App', [
+    var app = angular.module('app', [
 		'ngRoute',
 		'app.login',
 		'app.createClass',
@@ -25,7 +25,7 @@
 		};
 
 		return $rootScope.$on("$routeChangeSuccess", function(event, currentRoute, previousRoute) {
-			return $document.scrollTo(0, 0);
+			//return $document.scrollTo(0, 0);
 		});
 
 	}]);

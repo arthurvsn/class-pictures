@@ -22,14 +22,13 @@
     <link rel="stylesheet" type="text/css" href="assets/css/menu.css">
 
   </head>
-  <body ng-app="App" class="cp-font">
+  <body ng-app="app" class="cp-font">
 
     <div ng-controller="AppCtrl">
 
 
         <div ng-hide="hideMenu()">
             <section data-ng-include=" 'app/header.html' "></section>
-            <aside data-ng-include=" 'app/nav.html' "  class="panel panel-default col-xs-12 col-sm-4 col-md-4" style="padding: 20px;"></aside>
         </div>
 
         <div ng-view></div>
@@ -48,6 +47,8 @@
     <script src="assets/js/login-screen.js"></script>
     <script src="assets/js/create.js"></script>
     <script src="assets/js/list.js"></script>
+    <script src="assets/js/DisciplineController.js"></script>
+    
 
     <!-- Angular UI Bootstrap -->
     <!-- <script src="node_modules/angular-ui-bootstrap/ui-bootstrap.js"></script> -->

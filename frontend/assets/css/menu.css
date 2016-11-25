@@ -76,3 +76,12 @@ div.navbar-collapse.collapse {
 div.navbar-collapse.collapse.in {
   max-height: 2000px;
 }
+
+.block {
+  display: block;
+  opacity: 1;
+}
+
+.modal-dialog {
+  margin-top: 100px;
+}
