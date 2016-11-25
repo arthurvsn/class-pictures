@@ -5,6 +5,7 @@
 		$scope.doLogin = function () {
 			if ($scope.name === "teste" && $scope.password === "123") {
 				window.location = '#/main';
+				$scope.$root.usuario = $scope.name;
 			} else {
 				alert("Usuário e/ou senha inválidos! Verifique os dados inseridos.")
 			}
@@ -37,7 +38,7 @@
 	});
 
 	angular.module('app.login').controller('navbar', function($scope) {
-	  $scope.usuario = 'Fulano da Silva';
+	  //$scope.usuario = 'Fulano da Silva';
 	});
 
 })();
